@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head>
+    <title>Kinofilms</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .tab-container {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .tab-buttons {
+        display: flex;
+        margin-bottom: 20px;
+      }
+  
+      .tab-buttons button {
+        background-color: #2f3a3c;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: none;
+        transition: background-color 0.3s ease;
+      }
+  
+      .tab-buttons button.active {
+        background-color: #1b2122;
+      }
+  
+      .tab-content {
+        border: none;
+        padding: 5%;
+      }
+  
+      .tab-content > div {
+        display: none;
+      }
+  
+      .tab-content > div.active {
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <div class="background">
+      <div class="sidebar">
+        <div class="logo">
+          <a href="#">
+              <img width="50%" height="50%" src="Kinofilms2.png">
+          </a>
+        </div>
+        <h2> Now Showing: </h2>
+        <a href="#"> HORROR</a>
+        <br><br>
+        <a href="#"> COMEDY</a>
+        <br><br>
+        <a href="#">  DRAMA</a>
+        <br><br>
+        <a href="#">  CARTOONS</a>
+        <br><br>
+        <a href="#">  THRILLER</a>
+      </div>
+        <div class="wrapper">
+            
+            <div class="header">
+                <div class="navigation"><b>
+                    <a href="index.html">HOME</a>
+                    <a href="showing.html">SHOWING</a>
+                    <a href="booking.html">BOOKING</a>
+                    <a href="promotions.html">PROMOTIONS</a>
+                    <a href="locations.html">THEATRES</a>
+                    <a href="support.html">CUSTOMER SUPPORT</a>
+                    <a href="about.html">ABOUT</a>
+                </div></b>
+            </div>
+            
+            <div class="header-banner"></div>
+            <div class="row-native">
+              <div class="showing">
+                <div class="tab-container">
+                  <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="tab1">Horror</button>
+                    <button class="tab-button" data-tab="tab2">Comedy</button>
+                    <button class="tab-button" data-tab="tab3">Drama</button>
+                    <button class="tab-button" data-tab="tab3">Cartoons</button>
+                    <button class="tab-button" data-tab="tab3">Thriller</button>
+                  </div>
+              
+                  <div class="tab-content">
+                    <div id="tab1" class="active">
+                      <h2>Tab 1 Content</h2>
+                      <p>This is the content for Tab 1.</p>
+                    </div>
+                    <div id="tab2">
+                      <h2>Tab 2 Content</h2>
+                      <p>This is the content for Tab 2.</p>
+                    </div>
+                    <div id="tab3">
+                      <h2>Tab 3 Content</h2>
+                      <p>This is the content for Tab 3.</p>
+                    </div>
+                    <div id="tab4">
+                      <h2>Tab 4 Content</h2>
+                      <p>This is the content for Tab 4.</p>
+                    </div>
+                    <div id="tab5">
+                      <h2>Tab 5 Content</h2>
+                      <p>This is the content for Tab 5.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="footer">
+                <img width="150" height="40" src="Kinofilms2.png">
+                <p style="color:whitesmoke"><i>Peji Sean James Catapusan, 202311735@fit.edu.ph</i></p>
+            </div>
+        </div>
+    </div>
+    <script>
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content > div');
+  
+      tabButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons and content
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+  
+          // Add active class to the clicked button and its corresponding content
+          button.classList.add('active');
+          tabContents[index].classList.add('active');
+        });
+      });
+    </script>
+    
+
+</body>
+</html>
